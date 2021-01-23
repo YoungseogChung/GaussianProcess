@@ -5,7 +5,7 @@ Functions for GP creation and tuning.
 from scipydirect import minimize as direct_min
 
 from gp import GP
-from kernel import all_kernels
+from .kernel import all_kernels
 
 def create_gp(domain, kernel_name, noise=None, hps=None, **kwargs):
     """Create GP with the specified kernel.
@@ -64,6 +64,6 @@ def create_tuned_gp(domain, kernel_name, x_data, y_data, maxfs=50, **kwargs):
     hps = {}
     for idx in xrange(len(hp_specs)):
         hps[hp_specs[idx].name] = best_specs[idx + 1]
-    print hps
+    print(hps)
     kernel = kernel_creator(hps=hps, **kwargs)
     return GP(domain, kernel, noise)

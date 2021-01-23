@@ -44,7 +44,7 @@ def plot_fitted_2d_func(kernel_name, func_name, num_evals, maxfs=50):
     gp.add_observations(grid_pts, f_evals)
     plot_mean_surface(gp)
     plt.show()
-    print gp.get_log_marginal_likelihood()
+    print(gp.get_log_marginal_likelihood())
 
 def plot_pre_tuned_jeff(num_evals):
     """Create 2D surface plot for a specific function.
@@ -67,7 +67,7 @@ def plot_pre_tuned_jeff(num_evals):
     gp.add_observations(grid_pts, f_evals)
     plot_mean_surface(gp)
     plt.show()
-    print gp.get_log_marginal_likelihood()
+    print(gp.get_log_marginal_likelihood())
 
 if __name__ == '__main__':
     random_oned_visual('sqexp', 5)

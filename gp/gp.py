@@ -91,8 +91,8 @@ class GP(object):
         """Get covariance matrix between points."""
         num_pts = len(pts)
         pt_cov = np.zeros((num_pts, num_pts))
-        for i in xrange(num_pts):
-            for j in xrange(i, num_pts):
+        for i in range(num_pts):
+            for j in range(i, num_pts):
                 val = self.kernel(pts[i], pts[j])
                 if i == j:
                     val /= 2
@@ -104,8 +104,8 @@ class GP(object):
         """Get covariance matrix between new points and old points."""
         num_pts, num_data = len(pts), len(self.x_data)
         k_star = np.ndarray((num_pts, num_data))
-        for i in xrange(num_pts):
-            for j in xrange(num_data):
+        for i in range(num_pts):
+            for j in range(num_data):
                 k_star[i, j] = self.kernel(pts[i], self.x_data[j])
         return k_star
 
